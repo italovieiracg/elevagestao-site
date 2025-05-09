@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #6A0DAD; /* Roxo principal da Eleva */
+    --secondary-color: #77DD77; /* Verde para CTAs e destaques */
+    --dark-color: #2c2c2c; /* Tom escuro para texto e fundos */
+    --light-color: #ffffff;
+    --grey-bg: #f4f4f8; /* Fundo cinza claro para seções alternadas */
+    --text-color: #333333;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; /* Reduzido para um layout mais contido */
+    margin: 0 auto;
+    padding: 0 15px; /* Adicionado padding lateral */
+}
+
+/* Header */
+header {
+    background: var(--light-color);
+    padding: 1.2em 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #logo img {
+    max-height: 55px; /* Ajustado */
+    vertical-align: middle;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 30px; /* Aumentado espaçamento */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-family: var(--heading-font);
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+#hero {
+    background: url('img/background_missao.jpeg') no-repeat center center/cover;
+    color: var(--light-color);
+    height: 90vh; /* Aumentado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(106, 13, 173, 0.7), rgba(50, 0, 80, 0.9)); /* Gradiente Roxo Eleva */
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    font-family: var(--heading-font);
+    font-weight: 900; /* Mais peso */
+    font-size: 3.8em; /* Aumentado */
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 1.5em; /* Ajustado */
+    margin-bottom: 1.8em;
+    max-width: 700px; /* Limitar largura do parágrafo */
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255,255,255,0.9);
+}
+
+.cta-button {
+    background: var(--secondary-color);
+    color: var(--light-color);
+    padding: 18px 40px; /* Aumentado padding */
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1.3em; /* Aumentado */
+    border-radius: 50px; /* Mais arredondado */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background-color: #5db85d; /* Escurecer no hover */
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Seções Gerais */
+section {
+    padding: 70px 0; /* Ajustado padding */
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: var(--grey-bg);
+}
+
+section h2 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 2.6em; /* Ajustado */
+    margin-bottom: 1em; /* Ajustado */
+    color: var(--primary-color);
+}
+
+section p {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+}
+
+/* Seção Serviços */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.service-item img {
+    max-width: 60px;
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    font-family: var(--heading-font);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+/* Seção Depoimentos */
+.testimonial {
+    border: none; /* Removida borda */
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 10px;
+    max-width: 700px;
+    background: var(--light-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.testimonial img.author-pic {
+    width: 70px; /* Ajustado */
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--secondary-color);
+}
+
+.testimonial p.quote {
+    font-style: italic;
+    font-size: 1.15em; /* Aumentado */
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial p.author {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+/* Seção FAQ */
+.faq-item {
+    margin-bottom: 20px;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 8px;
+    background: var(--light-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.faq-item h3 {
+    font-family: var(--heading-font);
+    font-size: 1.25em;
+    margin: 0;
+    cursor: pointer;
+    color: var(--dark-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item h3::after { /* Ícone para expandir */
+    content: '+';
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.faq-item.active h3::after {
+    content: '−';
+}
+
+.faq-item p {
+    display: none;
+    color: #555;
+    line-height: 1.7;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+}
+
+/* Seção Contato */
+#contato {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+#contato h2 {
+    color: var(--light-color);
+}
+
+#contato p {
+    color: rgba(255,255,255,0.8);
+}
+
+#contato form {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    text-align: left;
+    background: transparent; /* Sem fundo extra */
+    padding: 0; /* Removido padding */
+    box-shadow: none; /* Removida sombra */
+}
+
+#contato form label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+}
+
+#contato form input[type="text"],
+#contato form input[type="email"],
+#contato form textarea {
+    width: 100%;
+    padding: 15px; /* Aumentado padding */
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+    background-color: rgba(255,255,255,0.1);
+    color: var(--light-color);
+    font-size: 1em;
+}
+
+#contato form input[type="text"]::placeholder,
+#contato form input[type="email"]::placeholder,
+#contato form textarea::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+#contato form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Rodapé */
+footer {
+    background: #222222; /* Mais escuro */
+    color: #aaa;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    header #logo img {
+        margin-bottom: 15px;
+    }
+    header nav ul {
+        margin-top: 10px;
+    }
+    header nav ul li {
+        display: block;
+        margin: 12px 0;
+    }
+    #hero h1 {
+        font-size: 2.8em;
+    }
+    #hero p {
+        font-size: 1.2em;
+    }
+    section h2 {
+        font-size: 2.1em;
+    }
+    .cta-button {
+        padding: 16px 35px;
+        font-size: 1.1em;
+    }
+    .service-grid {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+    }
+}
+
